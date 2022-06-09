@@ -22,6 +22,7 @@ public static class ClassArrayAndList
 
 
 
+
     }
 
 
@@ -84,7 +85,9 @@ public static class ClassArrayAndList
 
         for (int i = 0; i < 8; i++)
         {
-            Console.WriteLine(@$"IsCompletedGameHand(""{inputText[i]}"") is: {IsCompletedGameHand(inputText[i])}");
+            Console.WriteLine(@$"IsCompletedGameHand (""{inputText[i]}"") is: {IsCompletedGameHand(inputText[i])}");
+            Console.WriteLine("");
+            Console.WriteLine(@$"IsCompletedGameHand2(""{inputText[i]}"") is: {IsCompletedGameHand2(inputText[i])}");
         }
 
     }
@@ -145,6 +148,22 @@ public static class ClassArrayAndList
         if (!hasPair && lastSequence.Length == 2) { hasPair = true; } //first pair was found
 
         return hasPair;
+    }
+
+    public static bool IsCompletedGameHand2(string inputText)
+    //returns true if:  1 pair, no more than 1 pair, contains 0 up to N triple combined in the hand
+    //examples:
+    //inputText="99" => true (only 1 pair is ok)
+    //inputText="11222" => true (1 pair + 1 triple = ok)
+    //inputText="1122" => false (2 pairs not allowed)
+    //inputText="111" => false (none pair)
+    //inputText="11122233444" => true (3 triple + 1 pair ok)
+    //inputText="42121213344" => true ==> (3 triple + 1 pair ok, even out of order)
+    //inputText="9" => false (none pair)
+    //inputText="" => false (none pair)
+    {
+
+        return false; //pending ...
     }
 }
 public class NumberAndQty
